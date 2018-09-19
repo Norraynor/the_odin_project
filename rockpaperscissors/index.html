@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+	<script>
+		function computerPlay()
+		{
+			let choice = ['rock', 'paper', 'scissors'];
+			return choice[Math.floor(Math.random() * choice.length)];
+		}
+		function playRound(playerSel,computerSel)
+		{
+			if (playerSel === computerSel)
+			{
+				return("draw");
+			}
+			else
+			{
+				if(playerSel === 'rock' && computerSel === 'paper')
+				{
+					return ('You lose! ' + computerSel +' beats ' + playerSel);
+				}
+				if(playerSel === 'rock' && computerSel === 'scissors')
+				{
+					return ('You win! ' + playerSel +' beats ' + computerSel);
+				}
+
+				if(playerSel === 'paper' && computerSel === 'scissors')
+				{
+					return ('You lose! ' + computerSel +' beats ' + playerSel);
+				}
+				if(playerSel === 'paper' && computerSel === 'rock')
+				{
+					return('You win! ' + playerSel +' beats ' + computerSel);
+				}
+
+				if(playerSel === 'scissors' && computerSel === 'rock')
+				{
+					return('You lose! ' + computerSel +' beats ' + playerSel);
+				}
+				if(playerSel === 'scissors' && computerSel === 'paper')
+				{
+					return('You win! ' + playerSel +' beats ' + computerSel);
+				}
+			}
+		}
+		let playerInput='RocK';
+
+		const playerSelection = playerInput.toLowerCase();
+		const computerSelection = computerPlay();
+
+		function game()
+		{
+			for (var i = 0; i < 5; i++) 
+			{
+				let playerInput=prompt('Rock,Paper,Scissors?');
+
+				const playerSelection = playerInput.toLowerCase();
+				const computerSelection = computerPlay();
+				console.log(playRound(playerSelection,computerSelection));
+			}
+
+		}
+
+
+		
+	</script>
+</body>
+</html>
